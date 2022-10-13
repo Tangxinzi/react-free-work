@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Router, Route, Link } from 'react-router';
+// import { HashRouter as Router, Link, Route } from 'react-router-dom';
+import CommentBox from './comment/CommentBox';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// var comments = [
+//   { "author": "Jiangkun", "date": "5 分钟前", "text": "天气不错！" },
+//   { "author": "Le", "date": "3 分钟前", "text": "出去玩耍" }
+// ]
+
+const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CommentBox
+      // data={ comments }
+      url="/comments.json"
+    />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
